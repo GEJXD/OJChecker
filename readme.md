@@ -1,12 +1,12 @@
 # 为SDNU集训队处理比赛统计事宜
 
-由vjudgeChecker更名为OJchecker
+由Ghost_LZW/OJChecker修改来
 
-## 使用方法
+## Setup
 
 1. 安装python3
 
-2. 安装openpyxl
+2. 使用任意包管理器安装openpyxl、requests两个
 
 3. 将用户数据放入config(第一行不用于放置信息, 第一列放置姓名，第二列放置oj用户名
 
@@ -19,12 +19,20 @@
 4. 使用
 
 ```bash
-#查询vjudge
-python vjc.py
-#查询牛客
-python ncc.py
-#查询计蒜客
-python jsk.py
+usage: check.py [-h] -o {vj,nc,jsk,cf,atc} -c C [-n N]
+
+Crawling the contest information
+
+options:
+  -h, --help            show this help message and exit
+  -o O                  The Name of the OJ to crawl
+  -c C                  The Contest ID
+  -n N                  The Number of Problems
+```
+
+要查询牛客比赛ID为68532的比赛，在bash输入
+```bash
+python check.py -o nc -c 68532 -n 13
 ```
 
 5. 根据提示进行参数输入
@@ -42,8 +50,6 @@ python jsk.py
 4.题目提交数 --- 为每题提交次数， 显示为 总提交次数 / 是否AC
 
 5.未参加为红色，补完题为绿色
-
-6.Rank --- 为比赛排名
 
 ## Hint
 
